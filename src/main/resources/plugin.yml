@@ -1,0 +1,6 @@
+name: Spleaf
+version: '1.0.0'
+main: net.encryptstar.spleaf.Main
+api-version: '1.21'
+prefix: ES-SpLeaf
+description: The SpLeaf minigame plugin. Like spleef but leaf!
