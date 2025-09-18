@@ -1,7 +1,11 @@
 package net.encryptstar.spleaf.timers;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import net.encryptstar.spleaf.GameStart;
+import net.encryptstar.spleaf.events.PlayerJoinListener;
 
 public class PreGameTimer extends BukkitRunnable {
     private final int TIMER_START = 60;
@@ -9,16 +13,19 @@ public class PreGameTimer extends BukkitRunnable {
 
     @Override
     public void run() {
-        if (Bukkit.getServer().getOnlinePlayers().size() >= 2) {
+        if (PlayerJoinListener.getPlayerCount() >= PlayerJoinListener.MIN_PLAYERS) {
             // Update display timer (scoreboard, bossbar, etc)
             timer--;
-        } else if (timer < TIMER_START) {
-            // Notify players that timer reset
-            timer = TIMER_START;
+            if (timer % 10 == 0 || timer < 10) {
+                for (Player p : Bukkit.getServer().getOnlinePlayers()) {
+                    p.sendMessage("Game starts in "+ timer + " seconds!");
+                }
+            }
         }
 
         if (timer == 0) {
             // Teleport players, start game progression timer, and cancel this task
+            GameStart.teleportPlayers();
             this.cancel();
         }
     }

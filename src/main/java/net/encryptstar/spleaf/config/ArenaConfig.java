@@ -1,6 +1,5 @@
 package net.encryptstar.spleaf.config;
 
-import net.encryptstar.spleaf.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
