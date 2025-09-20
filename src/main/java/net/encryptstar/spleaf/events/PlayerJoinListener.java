@@ -16,7 +16,7 @@ public class PlayerJoinListener implements Listener {
     public static int getPlayerCount() {
         return pCount;
     }
-    public static final int MIN_PLAYERS = 1;
+    public static final int MIN_PLAYERS = 2;
 
     private final Main plugin;
     public PlayerJoinListener(Main plugin) {
