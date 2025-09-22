@@ -45,10 +45,11 @@ public class PlayerJoinListener implements Listener {
         if (!isTimerStopped() && pCount < MIN_PLAYERS) {
             for (Player p : plugin.getServer().getOnlinePlayers()) {
                 p.sendMessage("Timer reset! Not enough players!");
-                plugin.getLogger().log(Level.INFO, "Game start was cancelled!");
             }
+            plugin.getLogger().log(Level.INFO, "Game start was cancelled!");
             timer.cancel();
             timer = null;
         }
     }
 }
+
