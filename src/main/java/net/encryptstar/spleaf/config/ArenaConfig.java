@@ -16,6 +16,7 @@ public class ArenaConfig {
     public static void setup() {
         Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("Spleaf");
         assert (plugin != null);
+        if (!plugin.getDataFolder().exists()) plugin.getDataFolder().mkdir();
         file = new File(plugin.getDataFolder(), "arenaconfig.yml");
 
         try {
