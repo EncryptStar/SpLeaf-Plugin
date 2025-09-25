@@ -4,11 +4,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import net.encryptstar.spleaf.GameStart;
 import net.encryptstar.spleaf.events.PlayerJoinListener;
+import net.encryptstar.spleaf.game.GameStart;
 
 public class PreGameTimer extends BukkitRunnable {
-    private final int TIMER_START = 60;
+    private final int TIMER_START = 31;
     private int timer = TIMER_START;
 
     @Override

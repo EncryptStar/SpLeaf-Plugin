@@ -5,7 +5,9 @@ api-version: '1.21'
 prefix: ES-SpLeaf
 description: The SpLeaf minigame plugin. Like spleef but leaf!
 commands:
-  sptimer:
-    description: Start or stop the pre-game timer
-    aliases: [ timer ]
-    usage: /<command> <start|stop>
+  spStop:
+    description: Stop the pre-game timer
+    aliases: [ stopTimer ]
+  spStart:
+    description: Start the pre-game timer
+    aliases: [ startTimer ]

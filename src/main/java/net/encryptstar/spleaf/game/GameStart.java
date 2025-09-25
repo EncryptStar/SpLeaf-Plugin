@@ -1,4 +1,4 @@
-package net.encryptstar.spleaf;
+package net.encryptstar.spleaf.game;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;

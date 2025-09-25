@@ -5,8 +5,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-import net.encryptstar.spleaf.GameEnd;
-import net.encryptstar.spleaf.GameStart;
+import net.encryptstar.spleaf.game.GameEnd;
+import net.encryptstar.spleaf.game.GameStart;
 
 public class PlayerDeathListener implements Listener {
     @EventHandler

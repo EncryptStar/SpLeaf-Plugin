@@ -4,6 +4,8 @@ import java.util.logging.Level;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import net.encryptstar.spleaf.commands.TimerStartCommand;
+import net.encryptstar.spleaf.commands.TimerStopCommand;
 import net.encryptstar.spleaf.events.LeafDecayListener;
 import net.encryptstar.spleaf.events.PlayerDeathListener;
 import net.encryptstar.spleaf.events.PlayerDropItemListener;
@@ -15,12 +17,16 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        // Register all events
         getLogger().log(Level.INFO, "The SpLeaf plugin loaded successfully!");
         getServer().getPluginManager().registerEvents(new LeafDecayListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerFireballShootListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerDropItemListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
+        // Set all command executors
+        getCommand("spStop").setExecutor(new TimerStopCommand());
+        getCommand("spStart").setExecutor(new TimerStartCommand(this));
     }
 
     @Override
